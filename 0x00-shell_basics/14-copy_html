@@ -1,2 +1,2 @@
 #!/bin/bash
-cp **/*.html .  
+find ./ -type f -name '*.html' | while read P; do cp --parents "$P" .. ; done
