@@ -8,3 +8,4 @@ Create Directory In Tmp
 Move Betty From Tmp To Tmp/my first directory
 Delete Betty From Tmp/my first directory
 Delete Directory my first directory from tmp
+Go To Previous Directory
