@@ -33,4 +33,4 @@ chgrp groupname filename ---change the file group to the specify group
 chown -hR owner:group dir -- set all the files and directories and subdirectories owner and group to the specify owner and group
 
 
-
+chown -h owner:group filename -- set the file owner and group to the specify owner and group
