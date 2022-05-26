@@ -34,3 +34,6 @@ chown -hR owner:group dir -- set all the files and directories and subdirectorie
 
 
 chown -h owner:group filename -- set the file owner and group to the specify owner and group
+
+
+chown --from=old-owner new-owner file -- change a specify owner of a file to new specify new owner
