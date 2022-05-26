@@ -23,8 +23,9 @@ chmod 753 -- owner all permission, group read,execute permission other users wri
 
 chmod --reference=file-take-from file-taking --- set the permission of a file to another
 
-chmod -R ogu+x dir --- Recursively add execute permission for owner, group, other users to [dir] and subdirectories
+chmod -R ogu+X dir --- Recursively add execute permission for owner, group, other users to [dir] and subdirectories
 
 mkdir -m permission directory --- create a directory with that specify permission
 
 
+chgrp groupname filename ---change the file group to the specify group
