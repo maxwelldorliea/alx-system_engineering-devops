@@ -30,7 +30,7 @@ mkdir -m permission directory --- create a directory with that specify permissio
 
 chgrp groupname filename ---change the file group to the specify group
 
-chmod -hR owner:group dir -- set all the files and directories and subdirectories owner and group to the specify owner and group
+chown -hR owner:group dir -- set all the files and directories and subdirectories owner and group to the specify owner and group
 
 
 
