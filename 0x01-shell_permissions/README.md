@@ -22,3 +22,5 @@ chmod 007 -- owner, group no permission, others all permission
 chmod 753 -- owner all permission, group read,execute permission other users write execute permission
 
 chmod --reference=file-take-from file-taking --- set the permission of a file to another
+
+chmod -R ogu+x dir --- Recursively add execute permission for owner, group, other users to [dir] and subdirectories
