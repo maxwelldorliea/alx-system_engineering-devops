@@ -18,3 +18,5 @@ chmod a+x filename  --- adds execution permission to the owner, the group owner 
 
 chmod 007 -- owner, group no permission, others all permission
 
+
+chmod 753 -- owner all permission, group read,execute permission other users write execute permission
