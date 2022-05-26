@@ -7,3 +7,8 @@ groups --- Print group of current user
 chown username filename -- Change owner of [filename] to [username]
 
 touch filename --- Creates an empty with name [filename]
+
+
+chmod 764 filename --- adds execute permission to the owner and the group owner, and read permission to other users, to the a file with name with [filename]
+
+
