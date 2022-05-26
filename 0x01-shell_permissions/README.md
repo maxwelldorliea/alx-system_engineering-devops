@@ -37,3 +37,5 @@ chown -h owner:group filename -- set the file owner and group to the specify own
 
 
 chown --from=old-owner new-owner file -- change a specify owner of a file to new specify new owner
+
+telnet towel.blinkenlights.nl -- play stars war in terminal
