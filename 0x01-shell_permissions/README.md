@@ -1,1 +1,1 @@
- su - username -- Change from current user to [username]
+ su username -- Change from current user to [username]
