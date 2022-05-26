@@ -10,6 +10,6 @@ touch filename --- Creates an empty with name [filename]
 
 chmod 744 filename --- adds execute permission to the owner of the file 
 
-chmod 764 filename --- adds execute permission to the owner and the group owner, and read permission to other users, to the a file with name with [filename]
+chmod 754 filename --- adds execute permission to the owner and the group owner, and read permission to other users, to the a file with name with [filename]
 
 
