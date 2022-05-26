@@ -3,3 +3,5 @@
 whoami --- Print the effective user
 
 groups --- Print group of current user
+
+chown username filename -- Change owner of [filename] to [username]
