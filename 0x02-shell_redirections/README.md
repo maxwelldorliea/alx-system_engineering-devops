@@ -49,4 +49,7 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 
 #### grep "^[A-Za-z]" /etc/ssh/sshd-config -- Display all lines of the file /etc/ssh/sshd-config starting with a letter
 
+#### tr "A" "Z" | tr "c" "e" --- Replace all characters A and c from input to Z and e respectively.
+	
+
 
