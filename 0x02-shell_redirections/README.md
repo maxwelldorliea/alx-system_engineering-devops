@@ -55,3 +55,5 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 #### tr -d "C" | tr -d "c" --- removes all letters c and C from input.
 
 #### rev --- reverse its input
+
+#### cut -d ":" -f 1,6 /etc/passwd | sort -- displays all users and their home directories, sorted by users. Based on the the /etc/passwd file
