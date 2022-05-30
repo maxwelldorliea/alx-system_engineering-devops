@@ -23,3 +23,8 @@ head -n 3 iacta | tail -n 1 --- prints the third of the file iacta
 echo "Best School" > \\\*\\\\"'\"Best School\"\\\'"\\\\\*\$\\\?\\*\\\*\\\*\\\*\\\*\:\) -- create a file with this long and content Best School
 
 ls -la > 8-cwd-state --- writes into the file ls-cwd-content the result of the command ls -la. If the file ls-cwd-content already exists, it should be overwritten. If the file ls-cwd-content does not exist, create it.
+
+
+tail -n 1 >> iacta  -- duplicates the last line of the file iacta
+
+
