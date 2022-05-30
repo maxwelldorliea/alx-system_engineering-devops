@@ -27,4 +27,6 @@ ls -la > 8-cwd-state --- writes into the file ls-cwd-content the result of the c
 
 tail -n 1 >> iacta  -- duplicates the last line of the file iacta
 
+rm *.js --- deletes all the regular files (not the directories) with a .js extension that are present in the current directory and all its subfolders.
+
 
