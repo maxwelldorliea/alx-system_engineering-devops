@@ -6,3 +6,6 @@ echo "Hello, World" -- Prints hello world on a new line.
 echo "\"(Ôo)'"  -- Prints "(Ôo)'
 
 cat /etc/passwd -- display the content of the file /etc/passwd
+
+
+cat /etc/passwd /etc/hosts -- concatenate and display the contents of /etc/passwd /etc/hosts files
