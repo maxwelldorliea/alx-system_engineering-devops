@@ -12,3 +12,9 @@ cat /etc/passwd /etc/hosts -- concatenate and display the contents of /etc/passw
 
 
 tail /etc/passwd --- prints the last 10 line ofbthe file /etc/passwd
+
+
+head /etc/passwd --- Display the first 10 lines of /etc/passwd
+
+
+
