@@ -45,3 +45,8 @@ grep -i  "root" -A 3 /etc/passwd --- Display lines containing the pattern “roo
 
 
 grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd that do not contain the pattern “bin”.
+
+
+#### grep "^[A-Za-z]" /etc/ssh/sshd-config -- Display all lines of the file /etc/ssh/sshd-config starting with a letter
+
+
