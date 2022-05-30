@@ -52,4 +52,4 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 #### tr "A" "Z" | tr "c" "e" --- Replace all characters A and c from input to Z and e respectively.
 	
 
-
+#### tr -d "C" | tr -d "c" --- removes all letters c and C from input.
