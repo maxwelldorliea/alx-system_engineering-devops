@@ -41,4 +41,7 @@ cat /etc/passwd | grep root -- Display lines containing the pattern “root” f
 cat /etc/passwd | grep bin | wc -l -- Display the number of lines that contain the pattern “bin” in the file /etc/passwd
 
 
+grep -i  "root" -A 3 /etc/passwd --- Display lines containing the pattern “root” and 3 lines after them in the file /etc/passwd
+
+
 
