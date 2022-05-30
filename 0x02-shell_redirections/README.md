@@ -53,3 +53,5 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 	
 
 #### tr -d "C" | tr -d "c" --- removes all letters c and C from input.
+
+#### rev --- reverse its input
