@@ -20,4 +20,6 @@ head /etc/passwd --- Display the first 10 lines of /etc/passwd
 head -n 3 iacta | tail -n 1 --- prints the third of the file iacta
 
 
-echo "Best School" > \\\*\\\\\'\"Best School\"\\\'\\\\\*\$\\\?\\*\\\*\\\*\\\*\\\*\:\) -- create a file with this long and content Best School
+echo "Best School" > \\\*\\\\"'\"Best School\"\\\'"\\\\\*\$\\\?\\*\\\*\\\*\\\*\\\*\:\) -- create a file with this long and content Best School
+
+ls -la > 8-cwd-state --- writes into the file ls-cwd-content the result of the command ls -la. If the file ls-cwd-content already exists, it should be overwritten. If the file ls-cwd-content does not exist, create it.
