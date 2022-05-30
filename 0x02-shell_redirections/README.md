@@ -17,4 +17,7 @@ tail /etc/passwd --- prints the last 10 line ofbthe file /etc/passwd
 head /etc/passwd --- Display the first 10 lines of /etc/passwd
 
 
+head -n 3 iacta | tail -n 1 --- prints the third of the file iacta
+
+
 
