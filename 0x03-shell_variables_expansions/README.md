@@ -15,7 +15,7 @@
 #### env ---  lists environment variables.
 
 
-#### printenv | env --- ists all local variables and environment variables, and functions.
+#### set  --- ists all local variables and environment variables, and functions.
 
 
   
