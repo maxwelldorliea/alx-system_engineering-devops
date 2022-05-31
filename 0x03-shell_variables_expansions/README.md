@@ -30,4 +30,8 @@
 #### echo $(($POWER / $DIVIDE)) --- prints the result of POWER divided by DIVIDE, followed by a new line
 
 
+#### echo $(($BREATH ** $LOVE)) --- displays the result of BREATH to the power LOVE
+
+
+
  
