@@ -24,4 +24,4 @@
 #### export BEST="School" --- creates a new global variable with name BEST and value School
 
 
- 
+#### echo $((128+$TRUEKNOWLEDGE)) --- prints the result of the addition of 128 with the value stored in the environment variable TRUEKNOWLEDGE 
