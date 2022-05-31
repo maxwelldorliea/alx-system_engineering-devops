@@ -46,4 +46,7 @@
 #### tr 'A-Za-z' 'N-ZA-Mn-za-m' --- encodes and decodes text using the rot13 encryption. Assume ASCII.
 
 
+#### paste - - | cut -f1 --- prints every other line from the input, starting with the first line
+
+
 
