@@ -34,6 +34,6 @@
 
 
 
-#### printf "%d\n" $BINARY  --- converts a number from base 2 to base 10.
+#### echo 'ibase=2; $BINARY' | bc  --- converts a number from base 2 to base 10.
 
  
