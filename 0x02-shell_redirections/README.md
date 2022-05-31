@@ -62,4 +62,7 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 #### find . -empty | rev | cut -d "/" -f 1 | rev  --- finds all empty files and directories in the current directory and all sub-directories
 
 
+#### find . -type f -name "*.js" | rev | cut -d "/" -f 1 | cut -d "." -f 2- | rev | LCC-ALL=C sort -f --- lists all the files with a .gif extension in the current directory and all its sub-directories
+
+
 
