@@ -65,4 +65,4 @@ grep -i -v "bin" /etc/passwd -- Display all the lines in the file /etc/passwd th
 #### find . -type f -name "*.gif" | rev | cut -d "/" -f 1 | cut -d "." -f 2- | rev | LCC-ALL=C sort -f --- lists all the files with a .gif extension in the current directory and all its sub-directories
 
 
-
+#### cut -c 1| paste -s -d ' ' -- decodes acrostics that use the first letter of each line
