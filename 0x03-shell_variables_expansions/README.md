@@ -12,4 +12,4 @@
 #### echo $PATH | tr ":" "\n" | wc -l --- counts the number of directories in the PATH.
 
 
- 
+#### env lists environment variables. 
