@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# prints "Best School" ten times
+
+for i in {1..10}; do
+	echo -n "Best School"
+
+	if [ "$i" -lt 10 ]; then
+		echo ""
+	fi
+done
