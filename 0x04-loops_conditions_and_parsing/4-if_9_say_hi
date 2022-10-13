@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# prints "Best School" 10 times
+
+i=0
+
+while [ "$i" -lt 10 ]; do
+	if [ "$i" -eq 8 ]; then
+		echo "Hi"
+		i=$(( i+1))
+		continue
+	fi
+	echo "Best School"
+
+	i=$(( i+1 ))
+done
