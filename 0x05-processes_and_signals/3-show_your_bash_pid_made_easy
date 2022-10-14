@@ -2,8 +2,6 @@
 # print process id and name
 
 pids=$( pgrep bash)
-j=0
-
-for i in ${pids[@]}; do
+for i in "${pids[@]}"; do
 	echo "$i bash"
 done
