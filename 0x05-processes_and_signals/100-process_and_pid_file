@@ -11,6 +11,7 @@ trap 'catch_int' SIGINT
 
 catch_int() {
 	echo "Y U no love me?!"
+	exit
 }
 
 trap 'catch_quit' SIGQUIT
