@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# prints the proccess id of bash
+
+echo $$
