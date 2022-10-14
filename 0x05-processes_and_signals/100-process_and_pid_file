@@ -1,9 +1,11 @@
 #!/usr/bin/env bash
+# Creates the file /var/run/myscript.pid containing its PID
+
 trap 'catch_term' SIGTERM
 
 catch_term() {
 	echo "I hate the kill command"
-	sudo rm -f /var/run/myscript.pid
+	sudo rm /var/run/myscript.pid
 	exit
 }
 
@@ -16,13 +18,11 @@ catch_int() {
 trap 'catch_quit' SIGQUIT
 
 catch_quit() {
-	sudo rm -f /var/run/myscript.pid
+	rm /var/run/myscript.pid
 	exit
 }
 
-
-sudo bash -c "echo $$ > /var/run/myscript.pid"
-
+echo $$ > /var/run/myscript.pid
 while true; do
 	echo "To infinity and beyond"
 	sleep 2
