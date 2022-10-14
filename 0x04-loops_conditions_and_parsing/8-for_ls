@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 #print every in the current directory
 
-files=$( ls )
-for i in files'/*' ; do
-	echo "$i"
+for i in * ; do
+	echo "${i#*-}"
 done
