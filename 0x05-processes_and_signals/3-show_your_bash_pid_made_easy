@@ -1,13 +1,9 @@
 #!/usr/bin/env bash
 # print process id and name
 
-pids=$( pidof bash)
+pids=$( pgrep bash)
 j=0
 
 for i in ${pids[@]}; do
-	if [ "$j" -gt 0 ]; then
-		echo "$i bash"
-	fi
-
-	j=$(( j+1 ))
+	echo "$i bash"
 done
