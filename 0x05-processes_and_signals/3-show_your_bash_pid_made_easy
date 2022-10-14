@@ -2,7 +2,12 @@
 # print process id and name
 
 pids=$( pidof bash)
+j=0
 
 for i in ${pids[@]}; do
-	echo "$i bash"
+	if [ "$j" -gt 0 ]; then
+		echo "$i bash"
+	fi
+
+	j=$(( j+1 ))
 done
