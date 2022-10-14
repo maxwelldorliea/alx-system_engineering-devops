@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+pid=$( ps aux | grep ./4-to_infinity_and_beyond )
+j=0
+for i in $pid; do
+	if [ "$j" -gt 0 ]; then
+		kill -n 9 "$i"
+		break
+	fi
+
+	j=$(( j+1 ))
+done
