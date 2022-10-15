@@ -11,15 +11,16 @@ case $1 in
 		echo "manage_my_process started"
 		;;
 	stop)
+		pkill -f manage_my_process
 		rm /var/run/my_process.pid
 		echo "manage_my_process stopped"
-		pkill -f manage_my_process > /dev/null 2>&1
 		;;
 	restart)
+		pkill -f manage_my_process
 		rm /var/run/my_process.pid
-		pkill -f manage_my_process > /dev/null 2>&1
-		sudo -u maxwell ./manage_my_process &
+		./manage_my_process &
 		pid=$( pgrep -f ./manage_my_process )
+		echo "$pid" > /var/run/my_process.pid
 		echo "manage_my_process restarted"
 		;;
 	*)
