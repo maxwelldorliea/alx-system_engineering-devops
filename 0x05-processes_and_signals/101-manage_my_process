@@ -1,0 +1,27 @@
+#!/usr/bin/env bash
+# manage manage_process daemon
+
+
+case $1 in
+
+	start)
+		./manage_my_process &
+		pid=$( pgrep -f ./manage_my_process )
+		echo "$pid" > /var/run/my_process.pid
+		echo "manage_my_process started"
+		;;
+	stop)
+		rm /var/run/my_process.pid
+		echo "manage_my_process stopped"
+		pkill -f manage_my_process > /dev/null 2>&1
+		;;
+	restart)
+		rm /var/run/my_process.pid
+		pkill -f manage_my_process > /dev/null 2>&1
+		sudo -u maxwell ./manage_my_process &
+		pid=$( pgrep -f ./manage_my_process )
+		echo "manage_my_process restarted"
+		;;
+	*)
+		echo "Usage: manage_my_process {start|stop|restart}"
+esac	
