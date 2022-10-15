@@ -6,8 +6,7 @@ case $1 in
 
 	start)
 		./manage_my_process &
-		pid=$( pgrep -f ./manage_my_process )
-		echo "$pid" > /var/run/my_process.pid
+		echo $$ > /var/run/my_process.pid
 		echo "manage_my_process started"
 		;;
 	stop)
@@ -19,8 +18,7 @@ case $1 in
 		pkill -f manage_my_process
 		rm /var/run/my_process.pid
 		./manage_my_process &
-		pid=$( pgrep -f ./manage_my_process )
-		echo "$pid" > /var/run/my_process.pid
+		echo $$ > /var/run/my_process.pid
 		echo "manage_my_process restarted"
 		;;
 	*)
