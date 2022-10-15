@@ -2,7 +2,7 @@
 # manage manage_process daemon
 
 
-case $1 in
+case "$1" in
 
 	start)
 		./manage_my_process &
@@ -23,4 +23,5 @@ case $1 in
 		;;
 	*)
 		echo "Usage: manage_my_process {start|stop|restart}"
+		;;
 esac	
