@@ -2,6 +2,6 @@
 # Install and Configure Nginx to serve Hello World on homepage
 
 apt-get install nginx -y
-chown -R $USER:$USER /var/www/html
+chown -R "$USER":"$USER" /var/www/html
 echo "Hello World!" > /var/www/html/index.nginx-debian.html
 service nginx restart
