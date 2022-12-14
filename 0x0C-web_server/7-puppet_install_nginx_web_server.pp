@@ -1,12 +1,12 @@
 # perform a 301 redirect when querying /redirect_me.
 
-exec {'update host':
-command => '/usr/bin/apt update -y'
-}
+# exec {'update host':
+# command => '/usr/bin/apt update -y'
+# }
 
-exec {'updgrade host':
-command => '/usr/bin/apt upgrade -y'
-}
+# exec {'upgrade host':
+# command => '/usr/bin/apt upgrade -y'
+# }
 
 exec {'Install nginx':
 command => '/usr/bin/apt install nginx'
@@ -20,6 +20,9 @@ exec {'Make Homepage to display hello world':
 command => '/usr/bin/echo Hello World > /var/www/html/index.nginx-debian.html'
 }
 
-exec {'redirect permanently':
-command => '/usr/bin/sed -i "26i \\\tlocation /redirect_me {\n\t\t return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4"'
+file_line {'redirect permanently':
+path    => '/etc/nginx/sites-available/default',
+line  => 'rewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+after   => 'root /var/www/html;',
+replace => true
 }
