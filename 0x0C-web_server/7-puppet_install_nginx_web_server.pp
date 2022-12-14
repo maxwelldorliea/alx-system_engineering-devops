@@ -4,9 +4,9 @@ exec {'update host':
 command => '/usr/bin/apt update -y'
 }
 
-# exec {'updgrade host':
-# command => '/usr/bin/apt upgrade -y'
-#}
+exec {'updgrade host':
+ command => '/usr/bin/apt upgrade -y'
+}
 
 exec {'Install nginx':
 command => '/usr/bin/apt install nginx'
