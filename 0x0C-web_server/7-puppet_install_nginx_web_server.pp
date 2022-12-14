@@ -1,28 +1,35 @@
 # perform a 301 redirect when querying /redirect_me.
 
-# exec {'update host':
-# command => '/usr/bin/apt update -y'
-# }
-
-# exec {'upgrade host':
-# command => '/usr/bin/apt upgrade -y'
-# }
-
-exec {'Install nginx':
-command => '/usr/bin/apt install nginx'
+exec {'apt-get-update':
+  command => '/usr/bin/apt-get update'
 }
 
-exec {'Change var www owner':
-command => '/usr/bin/chown -R $USER:$USER /var/www'
+package {'apache2.2-common':
+  ensure  => 'absent',
+  require => Exec['apt-get-update']
 }
 
-exec {'Make Homepage to display hello world':
-command => '/usr/bin/echo Hello World > /var/www/html/index.nginx-debian.html'
+package { 'nginx':
+  ensure  => 'installed',
+  require => Package['apache2.2-common']
 }
 
-file_line {'redirect permanently':
-path    => '/etc/nginx/sites-available/default',
-line  => 'rewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
-after   => 'root /var/www/html;',
-replace => true
+service {'nginx':
+  ensure  =>  'running',
+  require => file_line['perform a redirection'],
+}
+
+file { '/var/www/html/index.nginx-debian.html':
+  ensure  => 'present',
+  content => 'Holberton School',
+  require =>  Package['nginx']
+}
+
+file_line { 'perform a redirection':
+  ensure  => 'present',
+  path    => '/etc/nginx/sites-enabled/default',
+  line    => 'rewrite ^/redirect_me/$ https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  after   => 'root /var/www/html;',
+  require => Package['nginx'],
+  notify  => Service['nginx'],
 }
