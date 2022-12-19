@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+# Install and configure HAproxy on your lb-01 server.
+# Requirements:
+# Configure HAproxy so that it send traffic to web-01 and web-02
+# Distribute requests using a roundrobin algorithm
+# Make sure that HAproxy can be managed via an init script
+# Make sure that your servers are configured with the right hostnames: [STUDENT_ID]-web-01 and [STUDENT_ID]-web-02. If not, follow this tutorial.
+# For your answer file, write a Bash script that configures a new Ubuntu machine to respect above requirements
+
+apt update -y
+apt install haproxy -y
+
+configuration="frontend alx_frontend\n  bind *:80\n  default_backend alx_backend\nbackend alx_backend\n  server web-01 35.153.16.224:80 check\n  server web-02 54.90.24.221:80 check
+"
+
+sed -i "$ a $configuration" /etc/haproxy/haproxy.cfg
+service haproxy restart
