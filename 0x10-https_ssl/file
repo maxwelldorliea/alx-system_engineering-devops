@@ -1,0 +1,17 @@
+
+; <<>> DiG 9.18.1-1ubuntu1.1-Ubuntu <<>> web.google.com ANY
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: REFUSED, id: 52790
+;; flags: qr rd ra; QUERY: 1, ANSWER: 0, AUTHORITY: 0, ADDITIONAL: 1
+
+;; OPT PSEUDOSECTION:
+; EDNS: version: 0, flags:; udp: 65494
+;; QUESTION SECTION:
+;web.google.com.			IN	ANY
+
+;; Query time: 188 msec
+;; SERVER: 127.0.0.53#53(127.0.0.53) (TCP)
+;; WHEN: Thu Dec 22 21:39:41 GMT 2022
+;; MSG SIZE  rcvd: 43
+
