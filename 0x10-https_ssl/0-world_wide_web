@@ -31,7 +31,8 @@
 
 dig_host(){
 	fulldomain=$2.$1
-	dig "$fulldomain" | grep -A1 "ANSWER SECTION:" | awk 'NR==2, NR==2{print "The subdomain " $fulldomain " is a " $4 " record and points to " $NF}'
+	subdomain=$2
+	dig "$fulldomain" | grep -A1 "ANSWER SECTION:" | awk 'NR==2, NR==2{print "The subdomain " $subdomain " is a " $4 " record and points to " $NF}'
 }
 
 domain=$1
