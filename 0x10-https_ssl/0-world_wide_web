@@ -30,11 +30,11 @@
 # Nonexistent subdomains
 
 dig_host(){
-	fulldomain=$2.$1
-	subdomain=$2
-	record=$(dig "$fulldomain" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $4}')
-        host=$(dig "$2"."$1" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $5}')
-        echo "The subdomain $subdomain is a $record record and points to $host"
+	FULL_DOMAIN=$2.$1
+	SUB_DOMAIN=$2
+	RECORD=$(dig "$FULL_DOMAIN" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $4}')
+        HOST=$(dig "$2"."$1" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $5}')
+        echo "The subdomain $SUB_DOMAIN is a $RECORD record and points to $HOST"
 }
 
 domain=$1
