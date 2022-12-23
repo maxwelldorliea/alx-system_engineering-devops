@@ -32,14 +32,16 @@
 dig_host(){
 	fulldomain=$2.$1
 	subdomain=$2
-	dig "$fulldomain" | grep -A1 "ANSWER SECTION:" | awk 'NR==2, NR==2{print "The subdomain " $subdomain " is a " $4 " record and points to " $NF}'
+	record=$(dig "$fulldomain" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $4}')
+        host=$(dig "$2"."$1" | awk 'BEGIN{OFS=" ";} /^'$2'/{print $5}')
+        echo "The subdomain $subdomain is a $record record and points to $host"
 }
 
 domain=$1
 subdomain=$2
 sub=( www lb-01 web-01 web-02 )
 check () {
-    if [[ $subdomain == "" ]]
+    if [[ $subdomain ]]
     then
         for x in "${sub[@]}"
         do
@@ -48,6 +50,5 @@ check () {
     else
         dig_host "$domain" "$subdomain"
     fi
-    return 0
 }
 check
