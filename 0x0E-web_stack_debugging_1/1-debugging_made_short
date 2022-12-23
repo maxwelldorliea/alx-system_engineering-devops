@@ -11,4 +11,6 @@
 # You cannot execute your previous answer file (Do not include the name of the previous script in this one)
 # service (init) must say that nginx is not running ← for real
 
-
+ln -sf /etc/nginx/sites-available/default /etc/nginx/sites-enabled/default
+sudo service nginx restart
+rm /run/nginx.pid
