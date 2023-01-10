@@ -8,7 +8,7 @@
 # The user to connect to the MySQL database must be root
 # The Bash script accepts one argument that is the password used to connect to the MySQL database
 if [[ $1 ]]; then
-	mysqldump -h localhost -u root -p"$1" --all-databases > backup.sql
+	mysqldump -h localhost -u root -p"$1" --all-databases > backup.sql && echo "backup.sql"
 	name=$(date +"%d-%m-%y")
 	tar -czvf "$name".tar.gz backup.sql
 fi
