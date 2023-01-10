@@ -10,5 +10,5 @@
 if [[ $1 ]]; then
 	mysqldump -h localhost -u root -p"$1" --all-databases > backup.sql && echo "backup.sql"
 	name=$(date +"%d-%m-%y")
-	tar -czvf "$name".tar.gz backup.sql
+	gzip -c backup.sql > "$name".tar.gz
 fi
