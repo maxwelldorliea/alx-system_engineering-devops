@@ -7,7 +7,8 @@
 # This archive must have the following name format: day-month-year.tar.gz
 # The user to connect to the MySQL database must be root
 # The Bash script accepts one argument that is the password used to connect to the MySQL database
-
-mysqldump -uroot --all-databases -p"$1" > backup.sql
-name=$(date +"%d-%m-%y")
-tar -czvf "$name".tar.gz backup.sql
+if [[ $1 ]]; then
+	mysqldump -h localhost -u root -p"$1" --all-databases > backup.sql
+	name=$(date +"%d-%m-%y")
+	tar -czvf "$name".tar.gz backup.sql
+fi
