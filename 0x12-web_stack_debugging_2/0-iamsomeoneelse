@@ -2,5 +2,5 @@
 # Display the current user name
 
 if [[ $1 ]]; then
-	su - "$1" whoami
+	sudo -u "$1" whoami
 fi
