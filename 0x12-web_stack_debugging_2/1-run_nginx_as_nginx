@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 # Run nginx as non-root user nginx
-
 sed -i "27i User=nginx\nGroup=nginx" /lib/systemd/system/nginx.service
-sed -i '/user www-data/d' /etc/nginx/nginx.conf
 sed -i 's/80/8080/g' /etc/nginx/sites-enabled/default
 sudo chown -R nginx:nginx /var/log/nginx/ /etc/nginx/ /usr/share/nginx/
 sudo systemctl daemon-reload
