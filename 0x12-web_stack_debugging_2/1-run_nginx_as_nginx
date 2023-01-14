@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 # Run nginx as non-root user nginx
 
-sudo service nginx stop
+service nginx stop
 pkill nginx
 pkill apache2
 sed -i 's/80/8080/' /etc/nginx/sites-enabled/default
 chown -R nginx:nginx /etc/nginx/ /var/run/ /var/log/nginx
-sudo -u nginx service nginx start
+su --login nginx -c 'service nginx start'
