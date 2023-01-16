@@ -3,21 +3,23 @@
 from sys import argv
 import requests
 
+
 def main() -> int:
     """Return information about a user TODO list progress."""
-    BASE_URL = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
-    TODO_URL = '{}/todos'.format(BASE_URL)
-    res = requests.get(TODO_URL)
+    base_url = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
+    todo_url = '{}/todos'.format(base_url)
+    res = requests.get(todo_url)
     if res.status_code == 200:
         res = res.json()
-        EMPLOYEE_NAME = requests.get(BASE_URL).json().get('name')
+        employee_name = requests.get(base_url).json().get('name')
         completed_tasks = [val for val in res if val["completed"]]
-        NUMBER_OF_DONE_TASKS = len(completed_tasks)
-        TOTAL_NUMBER_OF_TASKS = len(res)
+        number_of_done_taskS = len(completed_tasks)
+        total_number_of_taskS = len(res)
         print('Employee {} is done with tasks({}/{}):'.format(
-            EMPLOYEE_NAME, NUMBER_OF_DONE_TASKS, TOTAL_NUMBER_OF_TASKS))
+            employee_name, number_of_done_taskS,
+            total_number_of_taskS))
         for task in completed_tasks:
-            print(f'     {task.get("title")}')
+            print(f'\t {task.get("title")}')
     return 0
 
 
