@@ -1,8 +1,7 @@
 #!/usr/bin/python3
 """ALX SE API INTRO."""
-import requests
 from sys import argv
-
+import requests
 
 def main() -> int:
     """Return information about a user TODO list progress."""
