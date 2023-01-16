@@ -12,7 +12,7 @@ def main() -> int:
     res = requests.get(todo_url)
     if res.status_code == 200:
         res = res.json()
-        name = requests.get(base_url).json().get('name')
+        name = requests.get(base_url).json().get('username')
         filename = "{}.csv".format(argv[1])
         with open(filename, 'w', encoding='utf8') as csv_file:
             csv_file = csv.writer(
