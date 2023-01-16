@@ -19,7 +19,7 @@ def main() -> int:
             name, length,
             total))
         for task in completed_tasks:
-            print(f'\t {task.get("title")}')
+            print('\t {}'.format(task['title']))
     return 0
 
 
