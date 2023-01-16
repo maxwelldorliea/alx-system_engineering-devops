@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ALX SE API INTRO."""
-from sys import argv
 import requests
+from sys import argv
 
 
 def main() -> int:
