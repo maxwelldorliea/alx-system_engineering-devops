@@ -11,13 +11,13 @@ def main() -> int:
     res = requests.get(todo_url)
     if res.status_code == 200:
         res = res.json()
-        employee_name = requests.get(base_url).json().get('name')
+        name = requests.get(base_url).json().get('name')
         completed_tasks = [val for val in res if val["completed"]]
-        number_of_done_taskS = len(completed_tasks)
-        total_number_of_taskS = len(res)
+        length = len(completed_tasks)
+        total = len(res)
         print('Employee {} is done with tasks({}/{}):'.format(
-            employee_name, number_of_done_taskS,
-            total_number_of_taskS))
+            name, length,
+            total))
         for task in completed_tasks:
             print(f'\t {task.get("title")}')
     return 0
