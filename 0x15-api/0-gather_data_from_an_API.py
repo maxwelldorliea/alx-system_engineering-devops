@@ -6,8 +6,8 @@ from sys import argv
 
 def main() -> int:
     """Return information about a user TODO list progress."""
-    BASE_URL = f'https://jsonplaceholder.typicode.com/users/{argv[1]}'
-    TODO_URL = f'{BASE_URL}/todos'
+    BASE_URL = 'https://jsonplaceholder.typicode.com/users/{}'.format(argv[1])
+    TODO_URL = '{}/todos'.format(BASE_URL)
     res = requests.get(TODO_URL)
     if res.status_code == 200:
         res = res.json()
