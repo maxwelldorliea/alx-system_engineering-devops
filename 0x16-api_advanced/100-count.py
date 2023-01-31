@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ALX SE API Module."""
 import requests
+from operator import itemgetter
 
 
 def recurse(subreddit, top_list=[]):
@@ -53,7 +54,8 @@ def count_words(subreddit, word_list):
             count = title.count(word)
             stats[word] = count + stats.get(word, 0)
 
-    stats = dict(sorted(stats.items(), key=lambda v: v[0]))
+    stats = dict(sorted(stats.items(), key=lambda v: (
+        v[1], itemgetter(0)(v)), reverse=True))
     for k, v in stats.items():
         if v > 0:
             print('{}: {}'.format(k, v))
