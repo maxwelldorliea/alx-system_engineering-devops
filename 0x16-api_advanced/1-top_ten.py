@@ -17,4 +17,4 @@ def top_ten(subreddit):
             if idx == 9:
                 break
     else:
-        print(None)
+        print('None')
