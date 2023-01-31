@@ -9,7 +9,7 @@ def top_ten(subreddit):
             'User-Agent': 'MyBot/1.0'
             }
     url = 'https://reddit.com/r/{}/top.json'.format(subreddit)
-    response = requests.get(url, headers=header)
+    response = requests.get(url, headers=header, allow_redirects=False)
     if response.status_code == 200:
         post_list = response.json()['data']['children']
         for idx, post in enumerate(post_list):
