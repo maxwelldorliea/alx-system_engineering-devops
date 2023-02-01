@@ -16,12 +16,13 @@ def recurse(subreddit, top_list=[]):
 
     def get_post(limit, after, url, header, post_list):
         """Recursively make request to reddit api(Handled its pagination)."""
-        if limit > len(post_list):
+        if limit >= len(post_list):
             return
         url = '{}&after={}'.format(url, after)
         response = requests.get(url, headers=header)
-        post_list = response.json()['data']['children']
-        after = 't3_{}'.format(post_list[-1]['data']['id'])
+        result = response.json()['data']
+        post_list = result['children']
+        after = result['after']
         recurse_post(top_list, post_list, 0)
         get_post(limit, after, url, header, post_list)
 
@@ -32,8 +33,9 @@ def recurse(subreddit, top_list=[]):
     url = 'https://reddit.com/r/{}/top.json?limit={}'.format(subreddit, limit)
     response = requests.get(url, headers=header)
     if response.status_code == 200:
-        post_list = response.json()['data']['children']
-        after = 't3_{}'.format(post_list[-1]['data']['id'])
+        result = response.json()['data']
+        post_list = result['children']
+        after = result['after']
         recurse_post(top_list, post_list, 0)
         get_post(limit, after, url, header, post_list)
         return top_list
