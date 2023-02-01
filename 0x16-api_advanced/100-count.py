@@ -54,8 +54,6 @@ def count_words(subreddit, word_list):
             count = title.count(word)
             stats[word] = count + stats.get(word, 0)
 
-    stats = dict(sorted(stats.items(), key=lambda v: (
-        v[1], itemgetter(0)(v)), reverse=True))
-    for k, v in stats.items():
+    for k, v in sorted(stats.items(), key=lambda k: k[1], reverse=True):
         if v > 0:
             print('{}: {}'.format(k, v))
