@@ -42,6 +42,14 @@ def recurse(subreddit, top_list=[]):
 
 def count_words(subreddit, words_list):
     """Print stats of word_list in the hot topics in a subreddit."""
+    def count_word(word, title, t_curr_idx, count=0):
+        """Return the number appear of word in title."""
+        if t_curr_idx >= len(title):
+            return count
+        if word == title[t_curr_idx]:
+            count += 1
+        return count_word(word, title, t_curr_idx + 1, count)
+
     def get_stats(word_list, w_curr_idx, title_list, t_curr_idx, stats):
         """Recursively get the stats."""
         if t_curr_idx == len(title_list) - 1:
@@ -52,7 +60,7 @@ def count_words(subreddit, words_list):
 
         word = word_list[w_curr_idx].lower()
         title = title_list[t_curr_idx].lower()
-        count = title.count(word)
+        count = count_word(word, title.split(), 0)
         stats[word] = count + stats.get(word, 0)
         get_stats(word_list, w_curr_idx, title_list, t_curr_idx + 1, stats)
 
