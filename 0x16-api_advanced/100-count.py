@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 """ALX SE API Module."""
+from operator import itemgetter
 import requests
 
 
@@ -78,5 +79,6 @@ def count_words(subreddit, words_list):
     if not title_list:
         return
     get_stats(words_list, 0, title_list, 0, stats)
-    stats = sorted(stats.items(), key=lambda k: k[1], reverse=True)
+    stats = sorted(stats.items(), key=lambda k: (
+        k[1], itemgetter(0)(k)), reverse=True)
     print_stats(stats, 0)
