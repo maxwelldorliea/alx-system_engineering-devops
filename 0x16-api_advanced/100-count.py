@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ALX SE API Module."""
 import requests
-from operator import itemgetter
 
 
 def recurse(subreddit, top_list=[]):
