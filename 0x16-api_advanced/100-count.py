@@ -40,19 +40,35 @@ def recurse(subreddit, top_list=[]):
         return None
 
 
-def count_words(subreddit, word_list):
+def count_words(subreddit, words_list):
     """Print stats of word_list in the hot topics in a subreddit."""
+    def get_stats(word_list, w_curr_idx, title_list, t_curr_idx, stats):
+        """Recursively get the stats."""
+        if t_curr_idx == len(title_list) - 1:
+            t_curr_idx = 0
+            w_curr_idx += 1
+        if w_curr_idx >= len(word_list):
+            return
+
+        word = word_list[w_curr_idx].lower()
+        title = title_list[t_curr_idx].lower()
+        count = title.count(word)
+        stats[word] = count + stats.get(word, 0)
+        get_stats(word_list, w_curr_idx, title_list, t_curr_idx + 1, stats)
+
+    def print_stats(stats, curr_idx):
+        """Recursively print the stats."""
+        if curr_idx >= len(stats):
+            return
+        k, v = stats[curr_idx]
+        if v > 0:
+            print('{}: {}'.format(k, v))
+        print_stats(stats, curr_idx + 1)
+
     stats = {}
     title_list = recurse(subreddit)
     if not title_list:
         return
-    for title in title_list:
-        for word in word_list:
-            title = title.lower()
-            word = word.lower()
-            count = title.count(word)
-            stats[word] = count + stats.get(word, 0)
-
-    for k, v in sorted(stats.items(), key=lambda k: k[1], reverse=True):
-        if v > 0:
-            print('{}: {}'.format(k, v))
+    get_stats(words_list, 0, title_list, 0, stats)
+    stats = sorted(stats.items(), key=lambda k: k[1], reverse=True)
+    print_stats(stats, 0)
