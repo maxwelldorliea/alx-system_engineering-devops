@@ -27,7 +27,6 @@ server {
 		proxy_pass http://127.0.0.1:5000/airbnb-onepage;
 	}
     location /number_odd_or_even/ {
-                rewrite ^\/(.*) /$1 break;
                 proxy_pass http://127.0.0.1:5001/number_odd_or_even/;
     }
 	location /redirect_me {
